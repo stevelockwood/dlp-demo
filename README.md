@@ -12,5 +12,5 @@ or try multiple info types:
 	node redact.js image x-ray.png x-ray-redacted.png -t PERSON_NAME DATE GENDER
 6. Try different info types: see https://cloud.google.com/dlp/docs/infotypes-reference
 7. You can even try it on hand writing:
-	node redact.js image steveemail2.jpg steve-email-redacted.jpg -t EMAIL_ADDRESS	
+	node redact.js image contact-info.jpg contact-info-redacted.jpg -t EMAIL_ADDRESS	
 
