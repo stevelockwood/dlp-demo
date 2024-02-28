@@ -26,7 +26,8 @@ function redactImage(
   infoTypes,
   outputPath
 ) {
-  // [START dlp_redact_image]
+
+// [START dlp_redact_image]
 
   // Instantiates a client
   const dlp = new DLP.DlpServiceClient();
@@ -85,7 +86,8 @@ function redactImage(
   // [END dlp_redact_image]
 }
 
- const cli =  yargs(hideBin(process.argv))
+const cli = require(`yargs`)
+  .demand(1)
   .command(
     `image <filepath> <outputPath>`,
     `Redact sensitive data from an image using the Data Loss Prevention API.`,
@@ -136,6 +138,6 @@ function redactImage(
     `For more information, see https://cloud.google.com/dlp/docs. Optional flags are explained at https://cloud.google.com/dlp/docs/reference/rest/v2/projects.image/redact#ImageRedactionConfig`
   );
 
-// if (module === require.main) {
+if (module === require.main) {
   cli.help().strict().argv; // eslint-disable-line
-// }
+}
